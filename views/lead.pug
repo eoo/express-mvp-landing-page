@@ -1,7 +1,11 @@
-extends layout
+doctype html
 
-block content
+html(lang='en')
+  
+  include common/head.pug
+  +head("Starter MVP")
 
+  body
 	h1 Lead
 	p
 		span #{lead.email}
@@ -10,3 +14,6 @@ block content
 		| 
 		form(action="/lead/" + lead.id + "/delete", method="POST")
 			button(type="submit") Delete
+
+	include common/footer.pug
+    +footer()
